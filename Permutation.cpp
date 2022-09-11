@@ -7,7 +7,9 @@ class permutation {
             layer = 0;
             ptr = new char[layers];
         }
-        ~permutation() {}
+        ~permutation() {
+            delete [] ptr;
+        }
 
         void permute(void) {
             ++layer;

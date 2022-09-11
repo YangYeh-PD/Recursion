@@ -20,7 +20,7 @@ class maze {
                     if (!(start_row < row) || !(start_column < column)) {
                         throw invalid_argument("Enter a valid start point\n");
                     }
-                } catch (invalid_argument monkey) {
+                } catch (invalid_argument &monkey) {
                     cout << monkey.what();
                     goto monkey_start;
                 }
@@ -34,7 +34,7 @@ class maze {
                     if (!(end_row < row) || !(end_column < column)) {
                         throw invalid_argument("Enter a valid end point\n");
                     }
-                } catch (invalid_argument monkey) {
+                } catch (invalid_argument &monkey) {
                     cout << monkey.what();
                     goto monkey_end;
                 }
@@ -50,7 +50,7 @@ class maze {
                     if (Maze[start_row][start_column] == '1' || Maze[end_row][end_column] == '1') {
                         throw invalid_argument("There is no path can reach to the end point\n");
                     }
-                } catch(invalid_argument monkey) {
+                } catch(invalid_argument &monkey) {
                     cout << monkey.what();
                     cout << "Please enter the right maze!!!" << endl;
                     goto monkey;
